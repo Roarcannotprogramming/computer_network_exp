@@ -1,0 +1,3 @@
+/home/roar/CLionProjects/socket/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/roar/CLionProjects/socket/cmake-build-debug/CMakeFiles/socket.dir
+/home/roar/CLionProjects/socket/cmake-build-debug/CMakeFiles/edit_cache.dir
