@@ -1,0 +1,281 @@
+No.     Time           Source                Destination           Protocol Length Info
+     27 25.338273075   192.168.101.172       192.168.101.57        ICMP     98     Echo (ping) request  id=0x1143, seq=1/256, ttl=64 (reply in 28)
+
+Frame 27: 98 bytes on wire (784 bits), 98 bytes captured (784 bits) on interface 0
+    Interface id: 0 (wlp3s0)
+        Interface name: wlp3s0
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Nov 10, 2018 02:45:11.434346414 CST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1541789111.434346414 seconds
+    [Time delta from previous captured frame: 0.000013259 seconds]
+    [Time delta from previous displayed frame: 0.000000000 seconds]
+    [Time since reference or first frame: 25.338273075 seconds]
+    Frame Number: 27
+    Frame Length: 98 bytes (784 bits)
+    Capture Length: 98 bytes (784 bits)
+    [Frame is marked: True]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:icmp:data]
+    [Coloring Rule Name: ICMP]
+    [Coloring Rule String: icmp || icmpv6]
+Ethernet II, Src: IntelCor_43:5b:2a (58:fb:84:43:5b:2a), Dst: IntelCor_9b:aa:a0 (d0:57:7b:9b:aa:a0)
+    Destination: IntelCor_9b:aa:a0 (d0:57:7b:9b:aa:a0)
+        Address: IntelCor_9b:aa:a0 (d0:57:7b:9b:aa:a0)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: IntelCor_43:5b:2a (58:fb:84:43:5b:2a)
+        Address: IntelCor_43:5b:2a (58:fb:84:43:5b:2a)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 192.168.101.172, Dst: 192.168.101.57
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 84
+    Identification: 0xf11e (61726)
+    Flags: 0x4000, Don't fragment
+        0... .... .... .... = Reserved bit: Not set
+        .1.. .... .... .... = Don't fragment: Set
+        ..0. .... .... .... = More fragments: Not set
+        ...0 0000 0000 0000 = Fragment offset: 0
+    Time to live: 64
+    Protocol: ICMP (1)
+    Header checksum: 0xfd53 [validation disabled]
+    [Header checksum status: Unverified]
+    Source: 192.168.101.172
+    Destination: 192.168.101.57
+Internet Control Message Protocol
+    Type: 8 (Echo (ping) request)
+    Code: 0
+    Checksum: 0x7c21 [correct]
+    [Checksum Status: Good]
+    Identifier (BE): 4419 (0x1143)
+    Identifier (LE): 17169 (0x4311)
+    Sequence number (BE): 1 (0x0001)
+    Sequence number (LE): 256 (0x0100)
+    [Response frame: 28]
+    Timestamp from icmp data: Nov 10, 2018 02:45:11.000000000 CST
+    [Timestamp from icmp data (relative): 0.434346414 seconds]
+    Data (48 bytes)
+
+0000  08 96 06 00 00 00 00 00 10 11 12 13 14 15 16 17   ................
+0010  18 19 1a 1b 1c 1d 1e 1f 20 21 22 23 24 25 26 27   ........ !"#$%&'
+0020  28 29 2a 2b 2c 2d 2e 2f 30 31 32 33 34 35 36 37   ()*+,-./01234567
+        Data: 0896060000000000101112131415161718191a1b1c1d1e1f...
+        [Length: 48]
+
+No.     Time           Source                Destination           Protocol Length Info
+     28 25.340204667   192.168.101.57        192.168.101.172       ICMP     98     Echo (ping) reply    id=0x1143, seq=1/256, ttl=64 (request in 27)
+
+Frame 28: 98 bytes on wire (784 bits), 98 bytes captured (784 bits) on interface 0
+    Interface id: 0 (wlp3s0)
+        Interface name: wlp3s0
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Nov 10, 2018 02:45:11.436278006 CST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1541789111.436278006 seconds
+    [Time delta from previous captured frame: 0.001931592 seconds]
+    [Time delta from previous displayed frame: 0.001931592 seconds]
+    [Time since reference or first frame: 25.340204667 seconds]
+    Frame Number: 28
+    Frame Length: 98 bytes (784 bits)
+    Capture Length: 98 bytes (784 bits)
+    [Frame is marked: True]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:icmp:data]
+    [Coloring Rule Name: ICMP]
+    [Coloring Rule String: icmp || icmpv6]
+Ethernet II, Src: IntelCor_9b:aa:a0 (d0:57:7b:9b:aa:a0), Dst: IntelCor_43:5b:2a (58:fb:84:43:5b:2a)
+    Destination: IntelCor_43:5b:2a (58:fb:84:43:5b:2a)
+        Address: IntelCor_43:5b:2a (58:fb:84:43:5b:2a)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: IntelCor_9b:aa:a0 (d0:57:7b:9b:aa:a0)
+        Address: IntelCor_9b:aa:a0 (d0:57:7b:9b:aa:a0)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 192.168.101.57, Dst: 192.168.101.172
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 84
+    Identification: 0xc910 (51472)
+    Flags: 0x0000
+        0... .... .... .... = Reserved bit: Not set
+        .0.. .... .... .... = Don't fragment: Not set
+        ..0. .... .... .... = More fragments: Not set
+        ...0 0000 0000 0000 = Fragment offset: 0
+    Time to live: 64
+    Protocol: ICMP (1)
+    Header checksum: 0x6562 [validation disabled]
+    [Header checksum status: Unverified]
+    Source: 192.168.101.57
+    Destination: 192.168.101.172
+Internet Control Message Protocol
+    Type: 0 (Echo (ping) reply)
+    Code: 0
+    Checksum: 0x8421 [correct]
+    [Checksum Status: Good]
+    Identifier (BE): 4419 (0x1143)
+    Identifier (LE): 17169 (0x4311)
+    Sequence number (BE): 1 (0x0001)
+    Sequence number (LE): 256 (0x0100)
+    [Request frame: 27]
+    [Response time: 1.932 ms]
+    Timestamp from icmp data: Nov 10, 2018 02:45:11.000000000 CST
+    [Timestamp from icmp data (relative): 0.436278006 seconds]
+    Data (48 bytes)
+
+0000  08 96 06 00 00 00 00 00 10 11 12 13 14 15 16 17   ................
+0010  18 19 1a 1b 1c 1d 1e 1f 20 21 22 23 24 25 26 27   ........ !"#$%&'
+0020  28 29 2a 2b 2c 2d 2e 2f 30 31 32 33 34 35 36 37   ()*+,-./01234567
+        Data: 0896060000000000101112131415161718191a1b1c1d1e1f...
+        [Length: 48]
+
+No.     Time           Source                Destination           Protocol Length Info
+     29 26.337462582   192.168.101.172       192.168.101.57        ICMP     98     Echo (ping) request  id=0x1143, seq=2/512, ttl=64 (reply in 30)
+
+Frame 29: 98 bytes on wire (784 bits), 98 bytes captured (784 bits) on interface 0
+    Interface id: 0 (wlp3s0)
+        Interface name: wlp3s0
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Nov 10, 2018 02:45:12.433535921 CST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1541789112.433535921 seconds
+    [Time delta from previous captured frame: 0.997257915 seconds]
+    [Time delta from previous displayed frame: 0.997257915 seconds]
+    [Time since reference or first frame: 26.337462582 seconds]
+    Frame Number: 29
+    Frame Length: 98 bytes (784 bits)
+    Capture Length: 98 bytes (784 bits)
+    [Frame is marked: True]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:icmp:data]
+    [Coloring Rule Name: ICMP]
+    [Coloring Rule String: icmp || icmpv6]
+Ethernet II, Src: IntelCor_43:5b:2a (58:fb:84:43:5b:2a), Dst: IntelCor_9b:aa:a0 (d0:57:7b:9b:aa:a0)
+    Destination: IntelCor_9b:aa:a0 (d0:57:7b:9b:aa:a0)
+        Address: IntelCor_9b:aa:a0 (d0:57:7b:9b:aa:a0)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: IntelCor_43:5b:2a (58:fb:84:43:5b:2a)
+        Address: IntelCor_43:5b:2a (58:fb:84:43:5b:2a)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 192.168.101.172, Dst: 192.168.101.57
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 84
+    Identification: 0xf1e7 (61927)
+    Flags: 0x4000, Don't fragment
+        0... .... .... .... = Reserved bit: Not set
+        .1.. .... .... .... = Don't fragment: Set
+        ..0. .... .... .... = More fragments: Not set
+        ...0 0000 0000 0000 = Fragment offset: 0
+    Time to live: 64
+    Protocol: ICMP (1)
+    Header checksum: 0xfc8a [validation disabled]
+    [Header checksum status: Unverified]
+    Source: 192.168.101.172
+    Destination: 192.168.101.57
+Internet Control Message Protocol
+    Type: 8 (Echo (ping) request)
+    Code: 0
+    Checksum: 0x2419 [correct]
+    [Checksum Status: Good]
+    Identifier (BE): 4419 (0x1143)
+    Identifier (LE): 17169 (0x4311)
+    Sequence number (BE): 2 (0x0002)
+    Sequence number (LE): 512 (0x0200)
+    [Response frame: 30]
+    Timestamp from icmp data: Nov 10, 2018 02:45:12.000000000 CST
+    [Timestamp from icmp data (relative): 0.433535921 seconds]
+    Data (48 bytes)
+
+0000  5f 9d 06 00 00 00 00 00 10 11 12 13 14 15 16 17   _...............
+0010  18 19 1a 1b 1c 1d 1e 1f 20 21 22 23 24 25 26 27   ........ !"#$%&'
+0020  28 29 2a 2b 2c 2d 2e 2f 30 31 32 33 34 35 36 37   ()*+,-./01234567
+        Data: 5f9d060000000000101112131415161718191a1b1c1d1e1f...
+        [Length: 48]
+
+No.     Time           Source                Destination           Protocol Length Info
+     30 26.340020468   192.168.101.57        192.168.101.172       ICMP     98     Echo (ping) reply    id=0x1143, seq=2/512, ttl=64 (request in 29)
+
+Frame 30: 98 bytes on wire (784 bits), 98 bytes captured (784 bits) on interface 0
+    Interface id: 0 (wlp3s0)
+        Interface name: wlp3s0
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Nov 10, 2018 02:45:12.436093807 CST
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1541789112.436093807 seconds
+    [Time delta from previous captured frame: 0.002557886 seconds]
+    [Time delta from previous displayed frame: 0.002557886 seconds]
+    [Time since reference or first frame: 26.340020468 seconds]
+    Frame Number: 30
+    Frame Length: 98 bytes (784 bits)
+    Capture Length: 98 bytes (784 bits)
+    [Frame is marked: True]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:icmp:data]
+    [Coloring Rule Name: ICMP]
+    [Coloring Rule String: icmp || icmpv6]
+Ethernet II, Src: IntelCor_9b:aa:a0 (d0:57:7b:9b:aa:a0), Dst: IntelCor_43:5b:2a (58:fb:84:43:5b:2a)
+    Destination: IntelCor_43:5b:2a (58:fb:84:43:5b:2a)
+        Address: IntelCor_43:5b:2a (58:fb:84:43:5b:2a)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: IntelCor_9b:aa:a0 (d0:57:7b:9b:aa:a0)
+        Address: IntelCor_9b:aa:a0 (d0:57:7b:9b:aa:a0)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 192.168.101.57, Dst: 192.168.101.172
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 84
+    Identification: 0xc990 (51600)
+    Flags: 0x0000
+        0... .... .... .... = Reserved bit: Not set
+        .0.. .... .... .... = Don't fragment: Not set
+        ..0. .... .... .... = More fragments: Not set
+        ...0 0000 0000 0000 = Fragment offset: 0
+    Time to live: 64
+    Protocol: ICMP (1)
+    Header checksum: 0x64e2 [validation disabled]
+    [Header checksum status: Unverified]
+    Source: 192.168.101.57
+    Destination: 192.168.101.172
+Internet Control Message Protocol
+    Type: 0 (Echo (ping) reply)
+    Code: 0
+    Checksum: 0x2c19 [correct]
+    [Checksum Status: Good]
+    Identifier (BE): 4419 (0x1143)
+    Identifier (LE): 17169 (0x4311)
+    Sequence number (BE): 2 (0x0002)
+    Sequence number (LE): 512 (0x0200)
+    [Request frame: 29]
+    [Response time: 2.558 ms]
+    Timestamp from icmp data: Nov 10, 2018 02:45:12.000000000 CST
+    [Timestamp from icmp data (relative): 0.436093807 seconds]
+    Data (48 bytes)
+
+0000  5f 9d 06 00 00 00 00 00 10 11 12 13 14 15 16 17   _...............
+0010  18 19 1a 1b 1c 1d 1e 1f 20 21 22 23 24 25 26 27   ........ !"#$%&'
+0020  28 29 2a 2b 2c 2d 2e 2f 30 31 32 33 34 35 36 37   ()*+,-./01234567
+        Data: 5f9d060000000000101112131415161718191a1b1c1d1e1f...
+        [Length: 48]

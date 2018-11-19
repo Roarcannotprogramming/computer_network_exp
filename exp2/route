@@ -1,0 +1,8 @@
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.101.100 0.0.0.0         UG    600    0        0 wlp3s0
+192.168.101.0   0.0.0.0         255.255.255.0   U     600    0        0 wlp3s0
+
+第一行表示传送目的是访问Internet, 由接口wlp3s0，将数据包发送到网关192.168.101.100
+第二行表示主机所在的网络地址为192.168.101.0，若数据传输目标在本局域网内通信，则可直接通过wlp3s0转发数据包
+
