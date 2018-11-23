@@ -11,27 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba335949-3d84-4297-8ff2-c0e073a5956f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/client.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/socket.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/socket.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/socket.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/socket.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/socket.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/socket.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/socket.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/socket.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/socket.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/socket.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/socket.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/CMakeFiles/socket.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/socket.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/cmake-build-debug/socket.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../exp3/socket/server.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../exp3/socket/server.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="ba335949-3d84-4297-8ff2-c0e073a5956f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +24,7 @@
     <session id="856051863">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -200,12 +181,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1543002924684</updated>
-      <workItem from="1543002926177" duration="7203000" />
+      <workItem from="1543002926177" duration="7235000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7203000" />
+    <option name="totallyTimeSpent" value="7235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="30" width="1865" height="1050" extended-state="6" />

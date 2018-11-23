@@ -34,6 +34,7 @@ int receive_file(char *save_file_name, int sock_fd) {
 
     int counter = 1;
     FILE *fp;
+    int clear_flag = 0, end_flag = 1, done_flag = 1;
 
     if ((fp = fopen(save_file_name, "w")) == NULL) {
         printf("open file : %s failed.\n", save_file_name);
@@ -57,21 +58,25 @@ int receive_file(char *save_file_name, int sock_fd) {
             step 5. 调用不可靠数据传输发送新的RDT数据包(ACK包): udt_sendto()
         */
 
+
+        // Receive packet from client
         if ((pkt_len = (int) recvfrom(sock_fd, rdt_pkt, RDT_PKT_LEN, 0, (struct sockaddr *) &client_addr, sin_len)) <
             0) {
             return -1;
         }
 
+        // Extract the packet
         if ((data_len = unpack_rdt_pkt(rdt_data, rdt_pkt, pkt_len, &seq_num, &flag)) < 0) {
             return -1;
         }
 
+        // Test if the packet should be received
         memset(reply_pkt_buf, 0, RDT_PKT_LEN);
         if (seq_num < exp_seq_num || seq_num >= exp_seq_num + RDT_SENDWIN_LEN) {
-//          if ((reply_pkt_len = pack_rdt_pkt(reply_pkt_buf, rdt_pkt, pkt_len, seq_num, RDT_CTRL_ACK)) < 0)
             return -1;
         }
 
+        // If the packet should be received
         if (seq_num >= exp_seq_num && seq_num < exp_seq_num + RDT_SENDWIN_LEN) {
 
             // Add received data to circle buff
@@ -79,12 +84,12 @@ int receive_file(char *save_file_name, int sock_fd) {
             recv_len[(this + seq_num - exp_seq_num) % RDT_SENDWIN_LEN] = data_len;
 
             // Pack packet
-            if ((reply_pkt_len = pack_rdt_pkt(reply_pkt_buf, rdt_data, data_len, seq_num, RDT_CTRL_ACK)) < 0){
+            if ((reply_pkt_len = pack_rdt_pkt(reply_pkt_buf, rdt_data, data_len, seq_num, RDT_CTRL_ACK)) < 0) {
                 printf("pack reply packet error");
             }
 
             // Send packet to client
-            udt_sendto(sock_fd, reply_pkt_buf, reply_pkt_len, 0,(struct sockaddr *) &client_addr, sin_len);
+            udt_sendto(sock_fd, reply_pkt_buf, reply_pkt_len, 0, (struct sockaddr *) &client_addr, sin_len);
 
             // Protect the circle buff
             if (seq_num == exp_seq_num + 1) {
@@ -94,11 +99,28 @@ int receive_file(char *save_file_name, int sock_fd) {
                     exp_seq_num++;
                 }
             }
-
-
         }
 
+        // Test if the last packet received
+        if (flag == RDT_CTRL_END)
+            end_flag = 0;  // Set end flag
 
+        // Test if the circle buff is clear
+        if (end_flag == 0) {
+            clear_flag = 0;  //Set clear flag first
+            for (int jj = 0; jj < RDT_SENDWIN_LEN; jj++) {
+                if (recv_len[jj] >= 0)
+                    clear_flag = 1;  // Not Clear, unset the clear flag
+                if (jj == RDT_SENDWIN_LEN - 1 && clear_flag == 0) {
+                    done_flag = 0;  // Done
+                }
+            }
+        }
+
+        // If done end the while loop
+        if (done_flag == 0) {
+            break;
+        }
 
 
     }
