@@ -1,4 +1,4 @@
-# Install script for directory: /home/roar/CLionProjects/socket
+# Install script for directory: /home/roar/projects/computer_network_exp/exp3/socket
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/roar/CLionProjects/socket/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/roar/projects/computer_network_exp/exp3/socket/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

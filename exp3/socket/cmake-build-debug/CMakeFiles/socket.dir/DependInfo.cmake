@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/roar/CLionProjects/socket/udp_receiver.c" "/home/roar/CLionProjects/socket/cmake-build-debug/CMakeFiles/socket.dir/udp_receiver.c.o"
+  "/home/roar/projects/computer_network_exp/exp3/socket/udp_receiver.c" "/home/roar/projects/computer_network_exp/exp3/socket/cmake-build-debug/CMakeFiles/socket.dir/udp_receiver.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

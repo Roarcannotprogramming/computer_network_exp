@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/roar/CLionProjects/socket/udp_receiver.c
+/home/roar/projects/computer_network_exp/exp3/socket/udp_receiver.c
 stdio.h
 -
 stdlib.h

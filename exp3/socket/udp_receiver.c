@@ -17,6 +17,10 @@ int main(int argc, char **argv) {
     char recv_buf[UDP_BUF_LENGTH];
     int sock_fd;
     int pkt_len;
+    int total;
+    char chr = 'a';
+    int ii = 0;
+    int sum = 0, count = 0, last = 0;
 
     memset(&recv_addr, 0, sizeof(recv_addr));
     memset(&clet_addr, 0, sizeof(clet_addr));
@@ -34,14 +38,39 @@ int main(int argc, char **argv) {
         exit(0);
     }
 
+    memset(recv_buf, 0, sizeof(recv_buf));
+    sin_len = sizeof(clet_addr);
+    pkt_len = recvfrom(sock_fd, recv_buf, UDP_BUF_LENGTH, 0, (
+            struct sockaddr *) &clet_addr, sizeof(clet_addr));
+    recv_buf[pkt_len] = '\0';
+    printf("total message: %s \n", recv_buf);
+    for (ii = 0; ii < pkt_len; ii++) {
+        chr = recv_buf[ii];
+        sum *= 10;
+        sum += chr - '0';
+    }
+
+    ii = sum;
+
     while (1) {
         memset(recv_buf, 0, sizeof(recv_buf));
         sin_len = sizeof(clet_addr);
         pkt_len = recvfrom(sock_fd, recv_buf, UDP_BUF_LENGTH, 0, (
-        struct sockaddr*)&clet_addr, sizeof(clet_addr));
+                struct sockaddr *) &clet_addr, sizeof(clet_addr));
         recv_buf[pkt_len] = '\0';
         printf("[UDP_RECEIVER] receive msg[%d bytes]\n", pkt_len);
         printf("\t%s\n", recv_buf);
+        last = 0;
+        for (ii = 0; recv_buf[ii] != '\0'; ii++) {
+            chr = recv_buf[ii];
+            if (chr >= '0' && chr <='9'){
+                last *=10;
+                last += chr - '0';
+            }
+        }
+        count++;
+        last++;
+        printf("total: %d, received: %d, loss rate: %f\n\n\n", last, count, 1-(float)count/(float)last);
     }
 
     close(sock_fd);
