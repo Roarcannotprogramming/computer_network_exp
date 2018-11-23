@@ -45,21 +45,23 @@ int main(int argc, char **argv) {
         exit(0);
     }
 
-    printf("send msg to server: \n");
-    fgets(buffline, 4096, stdin);
-    if (send(sockfd, buffline, strlen(buffline), 0) < 0) {
-        printf("send msg error");
-        exit(0);
+    while (1) {
+        printf("send msg to server: \n");
+        fgets(buffline, 4096, stdin);
+        if (send(sockfd, buffline, strlen(buffline), 0) < 0) {
+            printf("send msg error");
+            exit(0);
+        }
+
+        if ((rec_len = (int) recv(sockfd, recbuffline, MAXLINECLI, 0)) == -1) {
+            perror("recv error");
+            exit(1);
+        }
+
+        recbuffline[rec_len] = '\0';
+
+        printf("recive form server: %s", recbuffline);
     }
-
-    if ((rec_len = (int) recv(sockfd, recbuffline, MAXLINECLI, 0)) == -1) {
-        perror("recv error");
-        exit(1);
-    }
-
-    recbuffline[rec_len] = '\0';
-
-    printf("recive form server: %s", buffline);
 
     close(sockfd);
     exit(0);

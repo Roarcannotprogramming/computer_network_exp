@@ -1,0 +1,4 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/roar/projects/computer_network_exp/exp4/project
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/roar/projects/computer_network_exp/exp4/project/cmake-build-debug

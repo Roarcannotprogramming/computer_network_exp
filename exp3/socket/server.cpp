@@ -51,7 +51,9 @@ int main(int argc, char **argv) {
 
         buff[n] = '\0';
 
-        printf("recive from client: %s", buff);
+        printf("recive from client: %s\n", buff);
+        printf("please reply:\n");
+        fgets(buff, 4096, stdin);
 
         if(send(connfd, buff, n, 0) < 0){
             printf("send error");

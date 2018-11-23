@@ -82,7 +82,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/roar/projects/computer_network_exp/exp3/socket/udp_receiver.c">
+		<Unit filename="/home/roar/projects/computer_network_exp/exp3/socket/client.cpp">
+			<Option target="socket"/>
+		</Unit>
+		<Unit filename="/home/roar/projects/computer_network_exp/exp3/socket/server.cpp">
 			<Option target="socket"/>
 		</Unit>
 		<Unit filename="/home/roar/projects/computer_network_exp/exp3/socket/CMakeLists.txt">

@@ -123,32 +123,59 @@ socket/fast:
 	$(MAKE) -f CMakeFiles/socket.dir/build.make CMakeFiles/socket.dir/build
 .PHONY : socket/fast
 
-udp_receiver.o: udp_receiver.c.o
+client.o: client.cpp.o
 
-.PHONY : udp_receiver.o
+.PHONY : client.o
 
 # target to build an object file
-udp_receiver.c.o:
-	$(MAKE) -f CMakeFiles/socket.dir/build.make CMakeFiles/socket.dir/udp_receiver.c.o
-.PHONY : udp_receiver.c.o
+client.cpp.o:
+	$(MAKE) -f CMakeFiles/socket.dir/build.make CMakeFiles/socket.dir/client.cpp.o
+.PHONY : client.cpp.o
 
-udp_receiver.i: udp_receiver.c.i
+client.i: client.cpp.i
 
-.PHONY : udp_receiver.i
+.PHONY : client.i
 
 # target to preprocess a source file
-udp_receiver.c.i:
-	$(MAKE) -f CMakeFiles/socket.dir/build.make CMakeFiles/socket.dir/udp_receiver.c.i
-.PHONY : udp_receiver.c.i
+client.cpp.i:
+	$(MAKE) -f CMakeFiles/socket.dir/build.make CMakeFiles/socket.dir/client.cpp.i
+.PHONY : client.cpp.i
 
-udp_receiver.s: udp_receiver.c.s
+client.s: client.cpp.s
 
-.PHONY : udp_receiver.s
+.PHONY : client.s
 
 # target to generate assembly for a file
-udp_receiver.c.s:
-	$(MAKE) -f CMakeFiles/socket.dir/build.make CMakeFiles/socket.dir/udp_receiver.c.s
-.PHONY : udp_receiver.c.s
+client.cpp.s:
+	$(MAKE) -f CMakeFiles/socket.dir/build.make CMakeFiles/socket.dir/client.cpp.s
+.PHONY : client.cpp.s
+
+server.o: server.cpp.o
+
+.PHONY : server.o
+
+# target to build an object file
+server.cpp.o:
+	$(MAKE) -f CMakeFiles/socket.dir/build.make CMakeFiles/socket.dir/server.cpp.o
+.PHONY : server.cpp.o
+
+server.i: server.cpp.i
+
+.PHONY : server.i
+
+# target to preprocess a source file
+server.cpp.i:
+	$(MAKE) -f CMakeFiles/socket.dir/build.make CMakeFiles/socket.dir/server.cpp.i
+.PHONY : server.cpp.i
+
+server.s: server.cpp.s
+
+.PHONY : server.s
+
+# target to generate assembly for a file
+server.cpp.s:
+	$(MAKE) -f CMakeFiles/socket.dir/build.make CMakeFiles/socket.dir/server.cpp.s
+.PHONY : server.cpp.s
 
 # Help Target
 help:
@@ -159,9 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... socket"
 	@echo "... edit_cache"
-	@echo "... udp_receiver.o"
-	@echo "... udp_receiver.i"
-	@echo "... udp_receiver.s"
+	@echo "... client.o"
+	@echo "... client.i"
+	@echo "... client.s"
+	@echo "... server.o"
+	@echo "... server.i"
+	@echo "... server.s"
 .PHONY : help
 
 
