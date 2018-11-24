@@ -15,7 +15,7 @@ int receive_file(char *save_file_name, int sock_fd) {
     char reply_pkt_buf[RDT_PKT_LEN];
     int reply_pkt_len;
 
-    char recv_buf[RDT_SENDWIN_LEN][RDT_DATA_LEN];
+    char recv_buf[RDT_SENDWIN_LEN][RDT_DATA_LEN+9];
     int recv_len[RDT_SENDWIN_LEN];
 //    int recv_stat[RDT_SENDWIN_LEN];
     int this = 0;
@@ -26,6 +26,7 @@ int receive_file(char *save_file_name, int sock_fd) {
     int seq_num;
     int flag;
     int exp_seq_num;
+    char rdt_data1[RDT_DATA_LEN];
 
     int total_recv_byte = 0;
 
@@ -41,8 +42,9 @@ int receive_file(char *save_file_name, int sock_fd) {
         return 1;
     }
 
-
-    memset(recv_len, -1, RDT_SENDWIN_LEN*sizeof(int));
+    memset(rdt_data1, '1', RDT_DATA_LEN* sizeof(char));
+    memset(recv_buf, '\0', RDT_SENDWIN_LEN * (RDT_DATA_LEN+9) * sizeof(char));
+    memset(recv_len, -1, RDT_SENDWIN_LEN * sizeof(int));
     memset(&client_addr, 0, sizeof(client_addr));
     sin_len = sizeof(client_addr);
 
@@ -75,11 +77,11 @@ int receive_file(char *save_file_name, int sock_fd) {
             end_flag = 0;  // Set end flag
 
         // Test if the packet should be received
-        memset(reply_pkt_buf, 0, RDT_PKT_LEN* sizeof(char));
+        memset(reply_pkt_buf, 0, RDT_PKT_LEN * sizeof(char));
 
-        if (seq_num <= exp_seq_num){
+        if (seq_num <= exp_seq_num) {
             // Pack packet
-            if ((reply_pkt_len = pack_rdt_pkt(rdt_data, reply_pkt_buf, data_len, seq_num, RDT_CTRL_ACK)) < 0) {
+            if ((reply_pkt_len = pack_rdt_pkt(rdt_data1, reply_pkt_buf, data_len, seq_num, RDT_CTRL_ACK)) < 0) {
                 printf("pack reply packet error");
                 return -1;
             }
@@ -98,9 +100,12 @@ int receive_file(char *save_file_name, int sock_fd) {
             // Protect the circle buff
             if (seq_num == exp_seq_num) {
                 for (; recv_len[this] >= 0; this = (this + 1) % RDT_SENDWIN_LEN) {
-                    fputs(recv_buf[this], fp);
-                    total_recv_byte+=recv_len[this];
+//                    fputs(recv_buf[this], fp);
+//                    fprintf(fp, recv_buf[this]);
+                    fwrite(recv_buf[this], sizeof(char), recv_len[this], fp);
+                    total_recv_byte += recv_len[this];
                     recv_len[this] = -1;
+                    memset(recv_buf[this], '\0', (RDT_DATA_LEN+9)* sizeof(char));
                     exp_seq_num++;
                 }
             }
@@ -165,7 +170,7 @@ int main(int argc, char **argv) {
         exit(1);
     }
 
-    if ((wrong_flag=receive_file(argv[1], sock_fd)) != 0) {
+    if ((wrong_flag = receive_file(argv[1], sock_fd)) != 0) {
         printf("receive file %s failed. wrong flag: %d\n", argv[1], wrong_flag);
         close(sock_fd);
         exit(1);

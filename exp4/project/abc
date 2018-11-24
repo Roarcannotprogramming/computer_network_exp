@@ -33,7 +33,7 @@
 #define		RDT_BEGIN_SEQ			1				//RDT数据包初始序列号，（假设数据包序列号不循环）		
 #define		RDT_SENDWIN_LEN			10				//发送端窗口大小
 
-#define		RDT_PKT_LOSS_RATE		10			//不可����AV靠数据传输层的丢包率
+#define		RDT_PKT_LOSS_RATE		10			//不可靠数据传输层的丢包率
 #define		RDT_TIME_OUT			50000		//数据包超时时限
 #define		RDT_HEADER_LEN			(4 + 4)		//RDT头标长度
 #define 	RDT_DATA_LEN			1000		//RDT中数据域长度
@@ -69,7 +69,7 @@ typedef struct _STATE_PKT
 typedef struct _SLD_WIN
 {
 	int win_len;							//滑动窗口长度
-	int send_left;							//滑�����AV�窗口的左端
+	int send_left;							//滑动窗口的左端
 	int send_right;							//滑动窗口的右端
 	pthread_mutex_t lock; 					//滑动窗口互斥量，保证只有一个线程在访问发送窗口中的数据
 	STATE_PKT rdt_pkts[RDT_SENDWIN_LEN]; 	//窗口中的数据包
@@ -98,7 +98,7 @@ int unpack_rdt_pkt( char *data_buf, char *rdt_pkt, int pkt_len, int *seq_num, in
 /*
 	模拟不可靠数据传输，以一定的概率（RDT_PKT_LOSS_RATE）丢弃数据包
 */
-void udt_sendto( int sock_fd, char *pkt, int pkt_len, int flags, struct sockaddr *recv_addr, i����AVnt addr_len );
+void udt_sendto( int sock_fd, char *pkt, int pkt_len, int flags, struct sockaddr *recv_addr, int addr_len );
 
 
 
@@ -110,68 +110,3 @@ int time_out( struct timeval time_1, struct timeval time_2 );
 
 #endif
 
-; 	//窗口中的数据包
-}SLD_WIN;
-
-
-/*
-	RDT packet format: |CTRL|SEQ|...DATA...|
-	将数据封装成RDT数据包，头部只包含控制域和序列号域，其中控制域用来标识RDT数据包类型,序列号域是此数据包的序列号。
-	返回RDT数据包长度
-*/
-int pack_rdt_pkt( char *data_buf, char *rdt_pkt, int data_len, int seq_num, int flag );
-
-
-
-/*
-	RDT packet format: |CTRL|SEQ|...DATA...|
-	
-	将数据包解封装。
-	返回RDT包中的数据长度
-*/
-int unpack_rdt_pkt( char *data_buf, char *rdt_pkt, int pkt_len, int *seq_num, int *flag );
-
-
-
-/*
-	模拟不可靠数据传输，以一定的概率（RDT_PKT_LOSS_RATE）丢弃数据包
-*/
-void udt_sendto( int sock_fd, char *pkt, int pkt_len, int flags, struct sockaddr *recv_addr, i����AVnt addr_len );
-
-
-
-/*
-	检查 (time_1 - time_2) 是否超过设定时限(RDT_TIME_OUT)，
-	如果超时返回1，否则返回0。
-*/
-int time_out( struct timeval time_1, struct timeval time_2 );
-
-#endif
-
-; 	//窗口中的数据包
-}SLD_WIN;
-
-
-/*
-	RDT packet format: |CTRL|SEQ|...DATA...|
-	将数据封装成RDT数据包，头部只包含控制域和序列号域，其中控制域用来标识RDT数据包类型,序列号域是此数据包的序列号。
-	返回RDT数据包长度
-*/
-int pack_rdt_pkt( char *data_buf, char *rdt_pkt, int data_len, int seq_num, int flag );
-
-
-
-/*
-	RDT packet format: |CTRL|SEQ|...DATA...|
-	
-	将数据包解封装。
-	返回RDT包中的数据长度
-*/
-int unpack_rdt_pkt( char *data_buf, char *rdt_pkt, int pkt_len, int *seq_num, int *flag );
-
-
-
-/*
-	模拟不可靠数据传输，以一定的概率（RDT_PKT_LOSS_RATE）丢弃数据包
-*/
-void udt_sendto( int sock_fd, char *pkt, int pkt_len, int flags, struct sockaddr *recv_addr, i����AV
