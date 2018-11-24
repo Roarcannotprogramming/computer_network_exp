@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/project.dir/rdt_gbn_receiver.c.o CMakeFiles/project.dir/rdt_gbn_sender.c.o CMakeFiles/project.dir/rdt_pkt_util.c.o  -o project 
+/usr/bin/cc -g   CMakeFiles/project.dir/rdt_gbn_receiver.c.o CMakeFiles/project.dir/rdt_pkt_util.c.o  -o project 

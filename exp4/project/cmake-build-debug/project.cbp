@@ -82,13 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/roar/projects/computer_network_exp/exp4/project/net_exp.h">
-			<Option target="project"/>
-		</Unit>
 		<Unit filename="/home/roar/projects/computer_network_exp/exp4/project/rdt_gbn_receiver.c">
-			<Option target="project"/>
-		</Unit>
-		<Unit filename="/home/roar/projects/computer_network_exp/exp4/project/rdt_gbn_sender.c">
 			<Option target="project"/>
 		</Unit>
 		<Unit filename="/home/roar/projects/computer_network_exp/exp4/project/rdt_pkt_util.c">

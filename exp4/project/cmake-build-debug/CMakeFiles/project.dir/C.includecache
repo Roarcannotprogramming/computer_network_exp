@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/roar/projects/computer_network_exp/exp4/project/net_exp.h
+sys/socket.h
+-
+sys/time.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+netdb.h
+-
+stdio.h
+-
+stdlib.h
+-
+errno.h
+-
+unistd.h
+-
+string.h
+-
+fcntl.h
+-
+time.h
+-
+pthread.h
+-
+ctype.h
+-
+
+/home/roar/projects/computer_network_exp/exp4/project/rdt_gbn_receiver.c
+net_exp.h
+/home/roar/projects/computer_network_exp/exp4/project/net_exp.h
+

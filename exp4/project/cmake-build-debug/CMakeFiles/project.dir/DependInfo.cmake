@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/home/roar/projects/computer_network_exp/exp4/project/rdt_gbn_receiver.c" "/home/roar/projects/computer_network_exp/exp4/project/cmake-build-debug/CMakeFiles/project.dir/rdt_gbn_receiver.c.o"
-  "/home/roar/projects/computer_network_exp/exp4/project/rdt_gbn_sender.c" "/home/roar/projects/computer_network_exp/exp4/project/cmake-build-debug/CMakeFiles/project.dir/rdt_gbn_sender.c.o"
   "/home/roar/projects/computer_network_exp/exp4/project/rdt_pkt_util.c" "/home/roar/projects/computer_network_exp/exp4/project/cmake-build-debug/CMakeFiles/project.dir/rdt_pkt_util.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

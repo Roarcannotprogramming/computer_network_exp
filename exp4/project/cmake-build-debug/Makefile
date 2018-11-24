@@ -150,33 +150,6 @@ rdt_gbn_receiver.c.s:
 	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/rdt_gbn_receiver.c.s
 .PHONY : rdt_gbn_receiver.c.s
 
-rdt_gbn_sender.o: rdt_gbn_sender.c.o
-
-.PHONY : rdt_gbn_sender.o
-
-# target to build an object file
-rdt_gbn_sender.c.o:
-	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/rdt_gbn_sender.c.o
-.PHONY : rdt_gbn_sender.c.o
-
-rdt_gbn_sender.i: rdt_gbn_sender.c.i
-
-.PHONY : rdt_gbn_sender.i
-
-# target to preprocess a source file
-rdt_gbn_sender.c.i:
-	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/rdt_gbn_sender.c.i
-.PHONY : rdt_gbn_sender.c.i
-
-rdt_gbn_sender.s: rdt_gbn_sender.c.s
-
-.PHONY : rdt_gbn_sender.s
-
-# target to generate assembly for a file
-rdt_gbn_sender.c.s:
-	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/rdt_gbn_sender.c.s
-.PHONY : rdt_gbn_sender.c.s
-
 rdt_pkt_util.o: rdt_pkt_util.c.o
 
 .PHONY : rdt_pkt_util.o
@@ -216,9 +189,6 @@ help:
 	@echo "... rdt_gbn_receiver.o"
 	@echo "... rdt_gbn_receiver.i"
 	@echo "... rdt_gbn_receiver.s"
-	@echo "... rdt_gbn_sender.o"
-	@echo "... rdt_gbn_sender.i"
-	@echo "... rdt_gbn_sender.s"
 	@echo "... rdt_pkt_util.o"
 	@echo "... rdt_pkt_util.i"
 	@echo "... rdt_pkt_util.s"

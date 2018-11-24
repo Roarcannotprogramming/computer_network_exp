@@ -42,6 +42,7 @@ int receive_file(char *save_file_name, int sock_fd) {
     }
 
 
+    memset(recv_len, -1, RDT_SENDWIN_LEN*sizeof(int));
     memset(&client_addr, 0, sizeof(client_addr));
     sin_len = sizeof(client_addr);
 
@@ -60,20 +61,31 @@ int receive_file(char *save_file_name, int sock_fd) {
 
 
         // Receive packet from client
-        if ((pkt_len = (int) recvfrom(sock_fd, rdt_pkt, RDT_PKT_LEN, 0, (struct sockaddr *) &client_addr, sin_len)) <
+        if ((pkt_len = (int) recvfrom(sock_fd, rdt_pkt, RDT_PKT_LEN, 0, (struct sockaddr *) &client_addr, &sin_len)) <
             0) {
-            return -1;
+            return -3;
         }
 
         // Extract the packet
         if ((data_len = unpack_rdt_pkt(rdt_data, rdt_pkt, pkt_len, &seq_num, &flag)) < 0) {
-            return -1;
+            return -2;
         }
+        // Test if the last packet received
+        if (flag == RDT_CTRL_END)
+            end_flag = 0;  // Set end flag
 
         // Test if the packet should be received
-        memset(reply_pkt_buf, 0, RDT_PKT_LEN);
-        if (seq_num < exp_seq_num || seq_num >= exp_seq_num + RDT_SENDWIN_LEN) {
-            return -1;
+        memset(reply_pkt_buf, 0, RDT_PKT_LEN* sizeof(char));
+
+        if (seq_num <= exp_seq_num){
+            // Pack packet
+            if ((reply_pkt_len = pack_rdt_pkt(rdt_data, reply_pkt_buf, data_len, seq_num, RDT_CTRL_ACK)) < 0) {
+                printf("pack reply packet error");
+                return -1;
+            }
+
+            // Send packet to client
+            udt_sendto(sock_fd, reply_pkt_buf, reply_pkt_len, 0, (struct sockaddr *) &client_addr, sin_len);
         }
 
         // If the packet should be received
@@ -83,27 +95,18 @@ int receive_file(char *save_file_name, int sock_fd) {
             strcpy(recv_buf[(this + seq_num - exp_seq_num) % RDT_SENDWIN_LEN], rdt_data);
             recv_len[(this + seq_num - exp_seq_num) % RDT_SENDWIN_LEN] = data_len;
 
-            // Pack packet
-            if ((reply_pkt_len = pack_rdt_pkt(reply_pkt_buf, rdt_data, data_len, seq_num, RDT_CTRL_ACK)) < 0) {
-                printf("pack reply packet error");
-            }
-
-            // Send packet to client
-            udt_sendto(sock_fd, reply_pkt_buf, reply_pkt_len, 0, (struct sockaddr *) &client_addr, sin_len);
-
             // Protect the circle buff
-            if (seq_num == exp_seq_num + 1) {
+            if (seq_num == exp_seq_num) {
                 for (; recv_len[this] >= 0; this = (this + 1) % RDT_SENDWIN_LEN) {
                     fputs(recv_buf[this], fp);
+                    total_recv_byte+=recv_len[this];
                     recv_len[this] = -1;
                     exp_seq_num++;
                 }
             }
         }
 
-        // Test if the last packet received
-        if (flag == RDT_CTRL_END)
-            end_flag = 0;  // Set end flag
+
 
         // Test if the circle buff is clear
         if (end_flag == 0) {
@@ -137,6 +140,7 @@ int main(int argc, char **argv) {
     int sin_len;
     int sock_fd;
     int pkt_len;
+    int wrong_flag;
 
     srand(time(NULL));
 
@@ -161,8 +165,8 @@ int main(int argc, char **argv) {
         exit(1);
     }
 
-    if (receive_file(argv[1], sock_fd) != 0) {
-        printf("receive file %s failed.\n", argv[1]);
+    if ((wrong_flag=receive_file(argv[1], sock_fd)) != 0) {
+        printf("receive file %s failed. wrong flag: %d\n", argv[1], wrong_flag);
         close(sock_fd);
         exit(1);
     }
